@@ -4,6 +4,7 @@ def islower(c):
     """Check if the given character is lowercase."""
     return ord('a') <= ord(c) <= ord('z')
 
+
 if __name__ == "__main__":
     islower = __import__('7-islower').islower
 
