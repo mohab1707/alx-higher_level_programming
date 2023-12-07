@@ -1,4 +1,4 @@
-dlistint_t *add_dnodeint_end(dlistint_t **head, const int n);#ifndef LISTS_H
+#ifndef LISTS_H
 #define LISTS_H
 
 #include <stdlib.h>
