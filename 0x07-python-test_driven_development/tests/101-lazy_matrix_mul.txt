@@ -1,0 +1,31 @@
+# Test cases for lazy_matrix_mul function
+>>> from 101-lazy_matrix_mul import lazy_matrix_mul
+
+# Test Case 1: Regular matrix multiplication
+>>> lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]])
+array([[ 7, 10],
+       [15, 22]])
+
+# Test Case 2: Matrix multiplication with different sizes (should raise a ValueError)
+>>> lazy_matrix_mul([[1, 2]], [[3, 4], [5, 6]])
+Traceback (most recent call last):
+    ...
+ValueError: m_a and m_b can't be multiplied
+
+# Test Case 3: Matrix multiplication with empty matrix (should raise a ValueError)
+>>> lazy_matrix_mul([], [[1, 2], [3, 4]])
+Traceback (most recent call last):
+    ...
+ValueError: m_a can't be empty or m_b can't be empty
+
+# Test Case 4: Matrix multiplication with invalid element (should raise a TypeError)
+>>> lazy_matrix_mul([[1, 2], [3, "four"]], [[1, 2], [3, 4]])
+Traceback (most recent call last):
+    ...
+TypeError: m_a should contain only integers or floats or m_b should contain only integers or floats
+
+# Test Case 5: Matrix multiplication with invalid size (should raise a TypeError)
+>>> lazy_matrix_mul([[1, 2], [3, 4, 5]], [[1, 2], [3, 4]])
+Traceback (most recent call last):
+    ...
+TypeError: each row of m_a must be of the same size or each row of m_b must be of the same size
