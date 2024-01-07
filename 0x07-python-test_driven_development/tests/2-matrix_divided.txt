@@ -1,0 +1,38 @@
+# Test cases for matrix_divided function
+>>> from 2-matrix_divided import matrix_divided
+
+# Test Case 1: Regular matrix and positive divisor
+>>> matrix = [[1, 2, 3], [4, 5, 6]]
+>>> matrix_divided(matrix, 3)
+[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+# Test Case 2: Regular matrix and negative divisor
+>>> matrix = [[1, 2, 3], [4, 5, 6]]
+>>> matrix_divided(matrix, -2)
+[[-0.5, -1.0, -1.5], [-2.0, -2.5, -3.0]]
+
+# Test Case 3: Matrix with all zeros and divisor as 2
+>>> matrix = [[0, 0], [0, 0]]
+>>> matrix_divided(matrix, 2)
+[[0.0, 0.0], [0.0, 0.0]]
+
+# Test Case 4: Matrix with a row of different size (should raise a TypeError)
+>>> matrix = [[1, 2, 3], [4, 5, 6], [7, 8]]
+>>> matrix_divided(matrix, 2)
+Traceback (most recent call last):
+    ...
+TypeError: Each row of the matrix must have the same size
+
+# Test Case 5: Matrix with a non-numeric element (should raise a TypeError)
+>>> matrix = [[1, 2, 3], [4, "five", 6]]
+>>> matrix_divided(matrix, 2)
+Traceback (most recent call last):
+    ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+# Test Case 6: Divisor as 0 (should raise a ZeroDivisionError)
+>>> matrix = [[1, 2, 3], [4, 5, 6]]
+>>> matrix_divided(matrix, 0)
+Traceback (most recent call last):
+    ...
+ZeroDivisionError: division by zero
